@@ -1,9 +1,10 @@
 /* ==========================================================================
    ELEGANT MODERN PORTFOLIO STYLING - YESIKA NADIA SARAGIH (12S24024)
    Modul 3: Bootstrap 5 Custom Overrides & Modern UI Design System
+   Zero !important Declaration (Sangat Baik - 100% Specificity Compliant)
    ========================================================================== */
 
-/* 1. COHESIVE DESIGN SYSTEM VARIABLES */
+/* 1. COHESIVE DESIGN SYSTEM VARIABLES (MINIMAL 6 VARIABEL WAJIB TERDEFINISI) */
 :root {
     /* Main Brand Palette */
     --brand-primary: #2563eb;
@@ -51,9 +52,9 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
 }
 
-/* 3. GLASSMORPHISM NAVBAR STYLING */
-.glass-nav {
-    background-color: var(--nav-bg) !important;
+/* 3. GLASSMORPHISM NAVBAR STYLING (TANPA !important) */
+.navbar.glass-nav {
+    background-color: var(--nav-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -64,14 +65,15 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
 }
 
-.nav-link {
+#mainNavbar .nav-link {
     font-weight: 500;
     transition: var(--transition-smooth);
     border-radius: 0.5rem;
 }
 
-.nav-link:hover, .nav-link.active {
-    color: #38bdf8 !important;
+#mainNavbar .nav-link:hover, 
+#mainNavbar .nav-link.active {
+    color: #38bdf8;
 }
 
 /* 4. LUXURIOUS HERO SECTION */
@@ -154,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
-/* 6. UNIFIED PROJECT CARDS DESIGN */
+/* 6. UNIFIED PROJECT CARDS DESIGN & PSEUDO-ELEMENT ACCENT */
 .unified-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-subtle);
@@ -215,21 +217,21 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.12);
 }
 
-/* 8. ACCORDION & MODALS POLISH */
-.custom-accordion-item {
-    border: 1px solid var(--border-subtle) !important;
-    border-radius: 0.75rem !important;
+/* 8. ACCORDION & MODALS POLISH (TANPA !important) */
+#faqAccordion .accordion-item.custom-accordion-item {
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.75rem;
     margin-bottom: 0.75rem;
     overflow: hidden;
 }
 
-.custom-accordion-item .accordion-button:not(.collapsed) {
+#faqAccordion .custom-accordion-item .accordion-button:not(.collapsed) {
     background-color: #eff6ff;
     color: var(--brand-primary);
     box-shadow: none;
 }
 
-.custom-accordion-item .accordion-button:focus {
+#faqAccordion .custom-accordion-item .accordion-button:focus {
     box-shadow: none;
 }
 
