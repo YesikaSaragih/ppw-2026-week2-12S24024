@@ -1,0 +1,52 @@
+{
+  "developer": {
+    "name": "Yesika Nadia Saragih",
+    "nim": "12S24024",
+    "studyProgram": "S1 Sistem Informasi",
+    "institution": "Institut Teknologi Del",
+    "course": "Pemrograman dan Pengujian Web (12S3101)",
+    "email": "saragihyesika@gmail.com",
+    "phone": "0878-6046-3635",
+    "status": "Aktif",
+    "bio": "Mahasiswi S1 Sistem Informasi di Institut Teknologi Del yang berfokus pada analisis sistem, perancangan antarmuka pengguna (UI/UX), pengelolaan basis data relasional, serta pengembangan aplikasi web yang modern, responsif, dan accessible.",
+    "avatar": "profile.png"
+  },
+  "statistics": {
+    "totalProjects": 6,
+    "completedProjects": 5,
+    "inProgressProjects": 1,
+    "organizations": 4
+  },
+  "skills": [
+    {
+      "name": "HTML5 & CSS3",
+      "category": "Frontend",
+      "level": "Lanjutan",
+      "description": "Struktur semantik murni, Flexbox, Grid 12-Kolom, Responsivitas, & WCAG 2.2 AA."
+    },
+    {
+      "name": "Bootstrap 5.3",
+      "category": "Framework",
+      "level": "Lanjutan",
+      "description": "Responsive Navbar, Card Components, Universal Modal, Floating Forms, & Utility Overrides."
+    },
+    {
+      "name": "JavaScript (ES6+)",
+      "category": "Programming",
+      "level": "Menengah",
+      "description": "Manipulasi DOM, Fetch API (async/await), Event Loop, LocalStorage, & Dynamic CSR."
+    },
+    {
+      "name": "SQL Server & Database",
+      "category": "Database",
+      "level": "Menengah",
+      "description": "Pemodelan ERD relasional, Query DDL/DML, Trigger, & SSMS."
+    },
+    {
+      "name": "Figma (UI/UX)",
+      "category": "Design",
+      "level": "Menengah",
+      "description": "Wireframing, High-fidelity Prototyping, & Design System UI."
+    }
+  ]
+}

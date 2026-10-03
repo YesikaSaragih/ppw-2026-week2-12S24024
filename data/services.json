@@ -1,0 +1,50 @@
+[
+  {
+    "id": "web-dev-pack",
+    "name": "Pengembangan Web Responsif",
+    "category": "web-dev",
+    "categoryName": "Web Development",
+    "description": "Pengembangan situs web modern berbasis HTML5 semantik, CSS Variables, Bootstrap 5.3, dan JavaScript ES6+ yang responsif dan accessible.",
+    "price": "Konsultasi / Proyek",
+    "icon": "bi-code-slash",
+    "badge": "Populer",
+    "features": [
+      "Struktur Semantik HTML5 & WCAG 2.2 AA",
+      "Sistem Grid 12-Kolom Bootstrap 5.3",
+      "Dynamic Client-Side Rendering (CSR)",
+      "Optimasi Performa & Responsivitas Layar"
+    ]
+  },
+  {
+    "id": "uiux-design-pack",
+    "name": "Desain Antarmuka & Prototyping",
+    "category": "uiux-design",
+    "categoryName": "UI/UX Design",
+    "description": "Perancangan wireframe, design system, dan prototipe interaktif high-fidelity menggunakan Figma untuk aplikasi desktop dan seluler.",
+    "price": "Konsultasi / Proyek",
+    "icon": "bi-palette",
+    "badge": "Kreatif",
+    "features": [
+      "User Research & User Journey Map",
+      "Wireframing Low & High Fidelity",
+      "Interactive Figma Prototype",
+      "Design System & Component Library"
+    ]
+  },
+  {
+    "id": "database-sql-pack",
+    "name": "Perancangan Basis Data & SQL",
+    "category": "database-sql",
+    "categoryName": "Database & Analysis",
+    "description": "Pemodelan basis data relasional ERD, pembuatan skema SQL Server DDL/DML, perancangan trigger, serta dokumen kebutuhan sistem (SRS).",
+    "price": "Konsultasi / Proyek",
+    "icon": "bi-database",
+    "badge": "Terstruktur",
+    "features": [
+      "Pemodelan Konseptual & Logikal ERD",
+      "Query SQL Server DDL/DML & Stored Procedure",
+      "Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SRS)",
+      "Diagram Use Case & Activity Diagram"
+    ]
+  }
+]

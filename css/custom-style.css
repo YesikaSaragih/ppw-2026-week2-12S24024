@@ -1,0 +1,284 @@
+/* ==========================================================================
+   ELEGANT MODERN PORTFOLIO STYLING - YESIKA NADIA SARAGIH (12S24024)
+   Modul 4: Custom Styles, Theming & CSS Variables (Zero !important)
+   ========================================================================== */
+
+/* 1. COHESIVE DESIGN SYSTEM VARIABLES */
+:root {
+    --brand-primary: #2563eb;
+    --brand-primary-hover: #1d4ed8;
+    --brand-accent: #38bdf8;
+    --brand-emerald: #10b981;
+    --brand-purple: #8b5cf6;
+
+    --nav-bg: rgba(15, 23, 42, 0.95);
+    --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    --body-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --tertiary-bg: #f1f5f9;
+
+    --text-heading: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+
+    --border-subtle: #e2e8f0;
+    --card-radius: 1rem;
+    --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+    --shadow-hover: 0 20px 40px -6px rgba(37, 99, 235, 0.14);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. GLOBAL RESET & TYPOGRAPHY */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-body);
+    background-color: var(--body-bg);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* 3. GLASSMORPHISM NAVBAR STYLING */
+.navbar.glass-nav {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand .brand-logo {
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+#mainNavbar .nav-link {
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    border-radius: 0.5rem;
+}
+
+#mainNavbar .nav-link:hover, 
+#mainNavbar .nav-link.active {
+    color: #38bdf8;
+}
+
+/* 4. LUXURIOUS HERO SECTION */
+.hero-wrapper {
+    background: var(--hero-gradient);
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    color: #ffffff;
+}
+
+.hero-wrapper h1,
+.hero-wrapper h2,
+.hero-wrapper h3,
+.hero-wrapper h4,
+.hero-wrapper h5,
+.hero-wrapper h6 {
+    color: #ffffff;
+}
+
+.hero-wrapper .hero-title-text {
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.hero-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.gradient-title {
+    background: linear-gradient(135deg, #38bdf8 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero-profile-ring {
+    position: relative;
+    padding: 8px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.5), rgba(37, 99, 235, 0.2));
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pulse-status {
+    width: 9px;
+    height: 9px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* 5. SECTION HEADER PILL TAGS */
+.section-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    background-color: rgba(37, 99, 235, 0.08);
+    color: var(--brand-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 9999px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+/* 6. UNIFIED PROJECT CARDS DESIGN & PSEUDO-ELEMENT ACCENT */
+.unified-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.unified-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: 5;
+}
+
+.unified-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.unified-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+/* 7. FORM FLOATING & INPUT GROUPS */
+.custom-form-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-select:focus ~ label {
+    color: var(--brand-primary);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.12);
+}
+
+/* 8. ACCORDION & MODALS POLISH */
+#faqAccordion .accordion-item.custom-accordion-item {
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+
+#faqAccordion .custom-accordion-item .accordion-button:not(.collapsed) {
+    background-color: #eff6ff;
+    color: var(--brand-primary);
+    box-shadow: none;
+}
+
+#faqAccordion .custom-accordion-item .accordion-button:focus {
+    box-shadow: none;
+}
+
+.modal-content {
+    border-radius: 1.25rem;
+    border: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+}
+
+/* 9. FLOATING BACK TO TOP BUTTON */
+.btn-back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--brand-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    transition: var(--transition-smooth);
+    z-index: 1000;
+}
+
+.btn-back-to-top:hover {
+    background-color: var(--brand-primary-hover);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.5);
+}
+
+/* 10. MEDIA QUERIES & MOBILE TWEAKS */
+@media (max-width: 991.98px) {
+    .hero-wrapper {
+        text-align: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .navbar-collapse {
+        background-color: #0f172a;
+        padding: 1.25rem;
+        border-radius: 1rem;
+        margin-top: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portofolio Personal & Portal Layanan Yesika Nadia Saragih - Mahasiswi S1 Sistem Informasi Institut Teknologi Del (NIM: 12S24024). Refactored dengan Bootstrap 5.3 & Modern Custom Overrides.">
+    <meta name="description" content="Portofolio Personal & Portal Layanan Yesika Nadia Saragih - Mahasiswi S1 Sistem Informasi IT Del (NIM: 12S24024). Modul 4: Decoupled Multi-Tier Architecture & Dynamic Client-Side Rendering (CSR).">
     <title>Yesika Nadia Saragih | Portofolio S1 Sistem Informasi IT Del</title>
 
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -17,7 +17,7 @@
     <!-- Bootstrap Icons 1.11.3 CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- External Custom CSS (Dimuat setelah Bootstrap CDN untuk Custom Overrides) -->
+    <!-- External Custom Styles (Zero !important) -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="90">
@@ -36,17 +36,19 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-1">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-1 align-items-lg-center">
                         <li class="nav-item"><a class="nav-link active px-3" href="#beranda"><i class="bi bi-house-door me-1"></i> Beranda</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#tentang"><i class="bi bi-person me-1"></i> Tentang Saya</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#keahlian"><i class="bi bi-cpu me-1"></i> Keahlian</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#organisasi"><i class="bi bi-people me-1"></i> Organisasi</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#proyek"><i class="bi bi-grid me-1"></i> Portofolio</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="#layanan-katalog"><i class="bi bi-boxes me-1"></i> Paket Layanan</a></li>
                         <li class="nav-item"><a class="nav-link px-3" href="#faq"><i class="bi bi-patch-question me-1"></i> FAQ</a></li>
-                        <li class="nav-item ms-lg-2">
-                            <a class="btn btn-primary rounded-pill px-4 py-2 mt-2 mt-lg-0 fw-semibold shadow-sm" href="#layanan">
+                        <li class="nav-item ms-lg-2 d-flex align-items-center gap-2 mt-2 mt-lg-0">
+                            <a class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm" href="#layanan">
                                 <i class="bi bi-send me-1"></i> Layanan Kontak
                             </a>
+                            <span id="orderCountBadge" class="badge bg-secondary rounded-pill" title="Jumlah pesanan di localStorage">0 Pesanan</span>
                         </li>
                     </ul>
                 </div>
@@ -71,7 +73,7 @@
                             </h1>
 
                             <p class="lead text-light text-opacity-75 mb-4 lh-base">
-                                Mahasiswi S1 Sistem Informasi di Institut Teknologi Del yang berfokus pada analisis sistem, perancangan antarmuka pengguna (UI/UX), pengelolaan basis data relasional, serta pengembangan aplikasi web yang modern dan responsif.
+                                Mahasiswi S1 Sistem Informasi di Institut Teknologi Del yang berfokus pada analisis sistem, perancangan antarmuka pengguna (UI/UX), pengelolaan basis data relasional, serta pengembangan aplikasi web yang modern, responsif, dan accessible.
                             </p>
 
                             <div class="d-flex flex-wrap gap-2 mb-4">
@@ -131,10 +133,10 @@
                                 <h3 class="h4 fw-bold mb-0">Latar Belakang & Peminatan</h3>
                             </div>
                             <p class="text-secondary lh-lg mb-3">
-                                Saya merupakan mahasiswi aktif program studi <strong>S1 Sistem Informasi di Institut Teknologi Del</strong>. Selama masa studi, saya berfokus pada perancangan dan analisis sistem informasi bisnis, pemodelan basis data relasional SQL Server, desain antarmuka pengguna (UI/UX), serta pengodean web modern berbasis standar HTML5, CSS3, dan Bootstrap 5.
+                                Saya merupakan mahasiswi aktif program studi <strong>S1 Sistem Informasi di Institut Teknologi Del</strong>. Selama masa studi, saya berfokus pada perancangan dan analisis sistem informasi bisnis, pemodelan basis data relasional SQL Server, desain antarmuka pengguna (UI/UX), serta pengodean web modern berbasis arsitektur terpisah (decoupled).
                             </p>
                             <p class="text-secondary lh-lg mb-0">
-                                Saya sangat menggemari proses perancangan produk digital yang tidak hanya terstruktur rapi dan responsif di berbagai perangkat, tetapi juga memenuhi standar aksesibilitas web (**WCAG 2.2 AA**) dan ramah bagi penggunanya.
+                                Saya sangat menggemari proses perancangan produk digital yang terstruktur rapi, memenuhi standar aksesibilitas web (**WCAG 2.2 AA**), serta terintegrasi dengan RESTful data providers secara asinkron.
                             </p>
                         </article>
                     </div>
@@ -208,24 +210,23 @@
                                 <li class="list-group-item border-0 px-0 py-3">
                                     <div class="d-flex align-items-center gap-2 mb-1">
                                         <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle">Bootstrap 5.3</span>
-                                        <span class="fw-bold text-dark">Framework UI Kontemporer</span>
+                                        <span class="fw-bold text-dark">Framework UI & Dynamic CSR</span>
                                     </div>
-                                    <small class="text-muted d-block">Responsive Navbar, Card Components, Modal Dialogs, & Floating Forms.</small>
+                                    <small class="text-muted d-block">Responsive Navbar, Card Components, Universal Dynamic Modal, & Floating Forms.</small>
                                 </li>
                                 <li class="list-group-item border-0 px-0 py-3">
                                     <div class="d-flex align-items-center gap-2 mb-1">
-                                        <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">JavaScript</span>
-                                        <span class="fw-bold text-dark">Interaktivitas Frontend</span>
+                                        <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">JavaScript (ES6+)</span>
+                                        <span class="fw-bold text-dark">Async Fetch & State Controller</span>
                                     </div>
-                                    <small class="text-muted d-block">Manipulasi DOM, event handling, dan penanganan validasi form.</small>
+                                    <small class="text-muted d-block">Manipulasi DOM, Fetch API (async/await), LocalStorage, & Toast Notification.</small>
                                 </li>
                                 <li class="list-group-item border-0 px-0 py-3">
                                     <div class="d-flex align-items-center gap-2 mb-1">
-                                        <span class="badge bg-success-subtle text-success border border-success-subtle">SQL Server</span>
-                                        <span class="badge bg-purple-subtle text-purple border border-purple-subtle">Figma</span>
-                                        <span class="fw-bold text-dark">Basis Data & Design UI/UX</span>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Decoupled JSON</span>
+                                        <span class="fw-bold text-dark">Mock REST Data Providers</span>
                                     </div>
-                                    <small class="text-muted d-block">Pemodelan ERD relasional, Query DDL/DML, dan Prototyping Figma.</small>
+                                    <small class="text-muted d-block">Pemisahan data layer (projects.json, services.json, profile.json).</small>
                                 </li>
                             </ul>
                         </article>
@@ -241,24 +242,24 @@
                             </div>
                             <ol class="list-group list-group-numbered list-group-flush border-0">
                                 <li class="list-group-item border-0 px-0 py-2.5">
-                                    <strong class="text-dark">Analisis Kebutuhan:</strong>
-                                    <span class="text-muted d-block ms-4">Mengumpulkan spesifikasi sistem & menyusun alur pengguna.</span>
+                                    <strong class="text-dark">Dekomposisi Data Layer:</strong>
+                                    <span class="text-muted d-block ms-4">Memisahkan data statis ke dalam file JSON modular di folder `/data`.</span>
                                 </li>
                                 <li class="list-group-item border-0 px-0 py-2.5">
-                                    <strong class="text-dark">Perancangan UI/UX:</strong>
-                                    <span class="text-muted d-block ms-4">Membuat wireframe & prototipe interaktif di Figma.</span>
+                                    <strong class="text-dark">Data Access Layer (`js/api-service.js`):</strong>
+                                    <span class="text-muted d-block ms-4">Membuat kelas pemanggil HTTP Fetch dengan `async/await` dan error handling.</span>
                                 </li>
                                 <li class="list-group-item border-0 px-0 py-2.5">
-                                    <strong class="text-dark">Pemodelan Basis Data:</strong>
-                                    <span class="text-muted d-block ms-4">Merancang skema relasi tabel & query SQL Server.</span>
+                                    <strong class="text-dark">Dynamic Client-Side Rendering (`js/app.js`):</strong>
+                                    <span class="text-muted d-block ms-4">Mengelola 4 UI States (Loading, Success, Empty, Error) dan merender kartu dinamis.</span>
                                 </li>
                                 <li class="list-group-item border-0 px-0 py-2.5">
-                                    <strong class="text-dark">Pengodean Web:</strong>
-                                    <span class="text-muted d-block ms-4">Menerjemahkan rancangan ke kode HTML5 & Bootstrap 5 responsif.</span>
+                                    <strong class="text-dark">Universal Dynamic Modal:</strong>
+                                    <span class="text-muted d-block ms-4">Mengonfigurasi 1 modal tunggal untuk injeksi detail proyek secara dinamis.</span>
                                 </li>
                                 <li class="list-group-item border-0 px-0 py-2.5">
-                                    <strong class="text-dark">Pengujian & Deployment:</strong>
-                                    <span class="text-muted d-block ms-4">Uji validasi aksesibilitas & publikasi ke GitHub Pages.</span>
+                                    <strong class="text-dark">Form Dispatch & Profiling DevTools:</strong>
+                                    <span class="text-muted d-block ms-4">Form POST asinkron, Toast, `localStorage`, dan analisis kinerja jaringan.</span>
                                 </li>
                             </ol>
                         </article>
@@ -336,415 +337,44 @@
             </div>
         </section>
 
-        <!-- SECTION 4: PORTOFOLIO KARYA & MODAL DIALOG (BOOTSTRAP 12-COLUMN GRID) -->
+        <!-- SECTION 4: PORTOFOLIO KARYA (DYNAMIC CLIENT-SIDE RENDERING CSR) -->
         <section id="proyek" class="py-5 bg-body-tertiary">
             <div class="container py-lg-4">
-                <div class="text-center max-w-2xl mx-auto mb-5">
-                    <span class="section-pill mb-2"><i class="bi bi-grid-3x3-gap"></i> Showcase Karya</span>
+                <div class="text-center max-w-2xl mx-auto mb-4">
+                    <span class="section-pill mb-2"><i class="bi bi-grid-3x3-gap"></i> Dynamic Client-Side Rendering</span>
                     <h2 class="fw-extrabold fs-1 mb-3">Portofolio & Riwayat Proyek</h2>
-                    <p class="text-muted fs-5">Kumpulan karya proyek akademik & kompetisi disajikan dalam Grid 12-Kolom Bootstrap dengan rincian Modal Dialog.</p>
+                    <p class="text-muted fs-5">Konten diinjeksi secara asinkron dari <code>data/projects.json</code> menggunakan ES6+ Fetch API dengan manajemen 4 UI States.</p>
                 </div>
 
-                <!-- RESPONSIVE GRID 12-KOLOM (MINIMAL 4 KARTU PROYEK BOOTSTRAP) -->
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-                    
-                    <!-- KARTU PROYEK 1: SyRS -->
-                    <div class="col">
-                        <article class="unified-card h-100 d-flex flex-column justify-content-between p-4">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div class="card-icon-box bg-primary-subtle text-primary">
-                                        <i class="bi bi-hospital"></i>
-                                    </div>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill"><i class="bi bi-check-circle me-1"></i> Selesai</span>
-                                </div>
-                                <span class="text-primary fw-bold small text-uppercase">Analisis Sistem</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">SyRS</h3>
-                                <p class="text-muted small mb-3">Sistem Rekam Medis Elektronik Klinik Del Terintegrasi.</p>
-                                <div class="d-flex flex-wrap gap-1.5 mb-4">
-                                    <span class="badge bg-light text-secondary border">SQL Server</span>
-                                    <span class="badge bg-light text-secondary border">ERD</span>
-                                    <span class="badge bg-light text-secondary border">SRS</span>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-outline-primary rounded-pill w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalSyRS">
-                                Detail Proyek <i class="bi bi-arrow-right-circle ms-1"></i>
-                            </button>
-                        </article>
-                    </div>
-
-                    <!-- KARTU PROYEK 2: CIS -->
-                    <div class="col">
-                        <article class="unified-card h-100 d-flex flex-column justify-content-between p-4">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div class="card-icon-box bg-info-subtle text-info-emphasis">
-                                        <i class="bi bi-activity"></i>
-                                    </div>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill"><i class="bi bi-check-circle me-1"></i> Selesai</span>
-                                </div>
-                                <span class="text-info-emphasis fw-bold small text-uppercase">Anaprancis</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">CIS Klinik</h3>
-                                <p class="text-muted small mb-3">Prototipe UI/UX Sistem Informasi Klinik Pratama Del.</p>
-                                <div class="d-flex flex-wrap gap-1.5 mb-4">
-                                    <span class="badge bg-light text-secondary border">Figma</span>
-                                    <span class="badge bg-light text-secondary border">Prototype</span>
-                                    <span class="badge bg-light text-secondary border">Use Case</span>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-outline-primary rounded-pill w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalCIS">
-                                Detail Proyek <i class="bi bi-arrow-right-circle ms-1"></i>
-                            </button>
-                        </article>
-                    </div>
-
-                    <!-- KARTU PROYEK 3: DelOlympic -->
-                    <div class="col">
-                        <article class="unified-card h-100 d-flex flex-column justify-content-between p-4">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div class="card-icon-box bg-dark text-white">
-                                        <i class="bi bi-trophy"></i>
-                                    </div>
-                                    <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill"><i class="bi bi-hourglass-split me-1"></i> In Progress</span>
-                                </div>
-                                <span class="text-primary fw-bold small text-uppercase">Web Development</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">DelOlympic</h3>
-                                <p class="text-muted small mb-3">Portal Manajemen Pendaftaran & Klasemen Olimpiade Del.</p>
-                                <div class="d-flex flex-wrap gap-1.5 mb-4">
-                                    <span class="badge bg-light text-secondary border">Bootstrap 5</span>
-                                    <span class="badge bg-light text-secondary border">HTML5</span>
-                                    <span class="badge bg-light text-secondary border">JS DOM</span>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-outline-primary rounded-pill w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalDelOlympic">
-                                Detail Proyek <i class="bi bi-arrow-right-circle ms-1"></i>
-                            </button>
-                        </article>
-                    </div>
-
-                    <!-- KARTU PROYEK 4: SafeScan -->
-                    <div class="col">
-                        <article class="unified-card h-100 d-flex flex-column justify-content-between p-4">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div class="card-icon-box bg-danger-subtle text-danger">
-                                        <i class="bi bi-shield-check"></i>
-                                    </div>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill"><i class="bi bi-check-circle me-1"></i> Selesai</span>
-                                </div>
-                                <span class="text-danger fw-bold small text-uppercase">UI/UX Competition</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">SafeScan Mobile</h3>
-                                <p class="text-muted small mb-3">Rancangan Aplikasi Mobile Deteksi Dini Phishing & Siber.</p>
-                                <div class="d-flex flex-wrap gap-1.5 mb-4">
-                                    <span class="badge bg-light text-secondary border">Figma UI/UX</span>
-                                    <span class="badge bg-light text-secondary border">Design System</span>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-outline-primary rounded-pill w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalSafeScan">
-                                Detail Proyek <i class="bi bi-arrow-right-circle ms-1"></i>
-                            </button>
-                        </article>
-                    </div>
-
-                    <!-- KARTU PROYEK 5: Imuniku -->
-                    <div class="col">
-                        <article class="unified-card h-100 d-flex flex-column justify-content-between p-4">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div class="card-icon-box bg-success-subtle text-success">
-                                        <i class="bi bi-heart-pulse"></i>
-                                    </div>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill"><i class="bi bi-check-circle me-1"></i> Selesai</span>
-                                </div>
-                                <span class="text-success fw-bold small text-uppercase">Mata Kuliah UI/UX</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">Imuniku</h3>
-                                <p class="text-muted small mb-3">Portal Edukasi Imunisasi & Tracking Tumbuh Kembang Anak.</p>
-                                <div class="d-flex flex-wrap gap-1.5 mb-4">
-                                    <span class="badge bg-light text-secondary border">Web Design</span>
-                                    <span class="badge bg-light text-secondary border">Responsive</span>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-outline-primary rounded-pill w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalImuniku">
-                                Detail Proyek <i class="bi bi-arrow-right-circle ms-1"></i>
-                            </button>
-                        </article>
-                    </div>
-
-                    <!-- KARTU PROYEK 6: Globora -->
-                    <div class="col">
-                        <article class="unified-card h-100 d-flex flex-column justify-content-between p-4">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div class="card-icon-box bg-warning-subtle text-warning-emphasis">
-                                        <i class="bi bi-compass"></i>
-                                    </div>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill"><i class="bi bi-check-circle me-1"></i> Selesai</span>
-                                </div>
-                                <span class="text-warning-emphasis fw-bold small text-uppercase">Teknowira</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">Globora</h3>
-                                <p class="text-muted small mb-3">Website Promosi Destinasi Wisata & Paket Tur Lokal.</p>
-                                <div class="d-flex flex-wrap gap-1.5 mb-4">
-                                    <span class="badge bg-light text-secondary border">Content Strategy</span>
-                                    <span class="badge bg-light text-secondary border">Pariwisata</span>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-outline-primary rounded-pill w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalGlobora">
-                                Detail Proyek <i class="bi bi-arrow-right-circle ms-1"></i>
-                            </button>
-                        </article>
-                    </div>
-
+                <!-- FILTER KATEGORI INSTAN (DYNAMICALLY RENDERED BY APP.JS) -->
+                <div id="categoryFilters" class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+                    <!-- Category buttons rendered dynamically -->
                 </div>
 
-                <!-- SEMANTIC SUMMARY TABLE FOR CONTINUITY -->
-                <div class="unified-card p-4 p-md-5 mt-4">
-                    <h4 class="fw-bold mb-3 d-flex align-items-center gap-2">
-                        <i class="bi bi-table text-primary"></i> Rekapitulasi Data Karya Proyek (HTML5 Semantik)
-                    </h4>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0">
-                            <caption class="text-muted small pt-2">Tabel rekapitulasi riwayat karya Yesika Nadia Saragih (NIM: 12S24024)</caption>
-                            <thead class="table-light">
-                                <tr>
-                                    <th scope="col">No.</th>
-                                    <th scope="col">Nama Proyek</th>
-                                    <th scope="col">Mata Kuliah / Konteks</th>
-                                    <th scope="col">Peran / Tim</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td><strong>SyRS</strong> <span class="d-block text-muted small">Sistem Rekam Medis Klinik Del</span></td>
-                                    <td>Analisis & Perancangan Sistem</td>
-                                    <td>Kelompok 08</td>
-                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Selesai</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td><strong>CIS</strong> <span class="d-block text-muted small">Sistem Informasi Klinik Pratama</span></td>
-                                    <td>Anaprancis (Tahap Prototype)</td>
-                                    <td>UI/UX Designer</td>
-                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Selesai</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td><strong>DelOlympic</strong> <span class="d-block text-muted small">Portal Olimpiade IT Del</span></td>
-                                    <td>Pemrograman & Pengujian Web</td>
-                                    <td>Front-End Developer</td>
-                                    <td><span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">In Progress</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td><strong>SafeScan</strong> <span class="d-block text-muted small">Deteksi Ancaman Siber Mobile</span></td>
-                                    <td>Kompetisi Desain UI/UX</td>
-                                    <td>UI/UX Designer</td>
-                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Selesai</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td><strong>Imuniku</strong> <span class="d-block text-muted small">Website Imunisasi Anak</span></td>
-                                    <td>Mata Kuliah UI/UX</td>
-                                    <td>UI Designer & Frontend</td>
-                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Selesai</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td><strong>Globora</strong> <span class="d-block text-muted small">Website Pariwisata Destinasi</span></td>
-                                    <td>Mata Kuliah Keteknowiraan</td>
-                                    <td>Pengembang Konten & UI</td>
-                                    <td><span class="badge bg-success-subtle text-success border border-success-subtle">Selesai</span></td>
-                                </tr>
-                            </tbody>
-                            <tfoot class="table-light">
-                                <tr>
-                                    <th scope="row" colspan="4">Total Rekapitulasi Proyek</th>
-                                    <td class="fw-bold text-primary">6 Proyek (5 Selesai, 1 In Progress)</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                <!-- RESPONSIVE GRID 12-KOLOM (DYNAMICALLY RENDERED BY APP.JS) -->
+                <div id="projectsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+                    <!-- 4 UI States rendered dynamically (Loading, Success, Empty, Error) -->
                 </div>
             </div>
         </section>
 
-        <!-- MODAL DIALOG DETAILS (BOOTSTRAP MODAL COMPONENTS) -->
-        <!-- MODAL 1: SyRS -->
-        <div class="modal fade" id="modalSyRS" tabindex="-1" aria-labelledby="modalSyRSLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content overflow-hidden">
-                    <div class="modal-header modal-header-gradient p-4">
-                        <div>
-                            <h5 class="modal-title fw-bold" id="modalSyRSLabel"><i class="bi bi-hospital me-2 text-info"></i> SyRS - Sistem Rekam Medis Klinik Del</h5>
-                            <small class="text-white-50">Mata Kuliah: Analisis & Perancangan Sistem Informasi</small>
-                        </div>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4 lh-lg">
-                        <h6 class="fw-bold text-primary mb-2"><i class="bi bi-info-circle me-1"></i> Deskripsi & Ringkasan Proyek</h6>
-                        <p class="text-secondary">
-                            Proyek SyRS dikembangkan untuk memodernisasi pencatatan riwayat medis pasien di Klinik IT Del secara terstruktur. Sistem mengintegrasikan pendataan rekam medis dokter, riwayat alergi obat, pendaftaran antrean, dan pelaporan inventaris farmasi secara real-time.
-                        </p>
-                        <hr class="my-3">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-dark"><i class="bi bi-person-badge me-1"></i> Peran & Kontribusi</h6>
-                                <p class="text-secondary small mb-0">Anggota Tim Kelompok 08 (Analis Kebutuhan & Perancang Diagram ERD & Use Case).</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-dark"><i class="bi bi-stack me-1"></i> Teknologi Digunakan</h6>
-                                <div class="d-flex flex-wrap gap-1">
-                                    <span class="badge bg-primary">SQL Server</span>
-                                    <span class="badge bg-secondary">ERD Modeling</span>
-                                    <span class="badge bg-info text-dark">Draw.io</span>
-                                    <span class="badge bg-dark">SRS Documentation</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer p-3 bg-light">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                    </div>
+        <!-- SECTION 5: KATALOG PAKET LAYANAN (DYNAMICALLY RENDERED FROM SERVICES.JSON) -->
+        <section id="layanan-katalog" class="py-5">
+            <div class="container py-lg-4">
+                <div class="text-center max-w-2xl mx-auto mb-5">
+                    <span class="section-pill mb-2"><i class="bi bi-boxes"></i> Katalog Layanan</span>
+                    <h2 class="fw-extrabold fs-1 mb-3">Paket Layanan & Solusi</h2>
+                    <p class="text-muted fs-5">Katalog paket layanan profesional yang diinjeksi secara asinkron dari <code>data/services.json</code>.</p>
+                </div>
+
+                <div id="servicesContainer" class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Services rendered dynamically -->
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- MODAL 2: SafeScan -->
-        <div class="modal fade" id="modalSafeScan" tabindex="-1" aria-labelledby="modalSafeScanLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content overflow-hidden">
-                    <div class="modal-header modal-header-gradient p-4">
-                        <div>
-                            <h5 class="modal-title fw-bold" id="modalSafeScanLabel"><i class="bi bi-shield-check me-2 text-danger"></i> SafeScan Mobile - Deteksi Siber</h5>
-                            <small class="text-white-50">Konteks: Kompetisi Desain UI/UX Tingkat Nasional</small>
-                        </div>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4 lh-lg">
-                        <h6 class="fw-bold text-danger mb-2"><i class="bi bi-info-circle me-1"></i> Deskripsi & Fitur Utama</h6>
-                        <p class="text-secondary">
-                            SafeScan merupakan perancangan aplikasi mobile interaktif yang membantu pengguna awam mendeteksi tautan phishing, mengidentifikasi kebocoran kredensial email, serta memberikan skor keamanan jaringan Wi-Fi secara intuitif.
-                        </p>
-                        <hr class="my-3">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-dark"><i class="bi bi-person-badge me-1"></i> Peran & Kontribusi</h6>
-                                <p class="text-secondary small mb-0">Lead UI/UX Designer (Design System, High-Fidelity Prototype, dan Usability Testing).</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-dark"><i class="bi bi-stack me-1"></i> Tool & Metode</h6>
-                                <div class="d-flex flex-wrap gap-1">
-                                    <span class="badge bg-danger">Figma</span>
-                                    <span class="badge bg-secondary">Mobile Prototyping</span>
-                                    <span class="badge bg-warning text-dark">Design System</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer p-3 bg-light">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODAL 3: DelOlympic -->
-        <div class="modal fade" id="modalDelOlympic" tabindex="-1" aria-labelledby="modalDelOlympicLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content overflow-hidden">
-                    <div class="modal-header modal-header-gradient p-4">
-                        <div>
-                            <h5 class="modal-title fw-bold" id="modalDelOlympicLabel"><i class="bi bi-trophy me-2 text-warning"></i> DelOlympic - Portal Olimpiade IT Del</h5>
-                            <small class="text-white-50">Mata Kuliah: Pemrograman & Pengujian Web (12S3101)</small>
-                        </div>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4 lh-lg">
-                        <h6 class="fw-bold text-primary mb-2"><i class="bi bi-info-circle me-1"></i> Deskripsi Proyek</h6>
-                        <p class="text-secondary">
-                            Platform web interaktif untuk memuat informasi babak kompetisi olimpiade sains dan pemrograman di IT Del, dilengkapi fitur pendaftaran tim online, jadwal pertandingan, dan papan skor klasemen real-time.
-                        </p>
-                        <hr class="my-3">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-dark"><i class="bi bi-person-badge me-1"></i> Peran & Kontribusi</h6>
-                                <p class="text-secondary small mb-0">Frontend Web Developer (Sistem Grid Bootstrap 5, Form Validation, & Responsive Layout).</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-dark"><i class="bi bi-stack me-1"></i> Stack Teknologi</h6>
-                                <div class="d-flex flex-wrap gap-1">
-                                    <span class="badge bg-primary">Bootstrap 5.3</span>
-                                    <span class="badge bg-success">HTML5 Semantik</span>
-                                    <span class="badge bg-warning text-dark">JavaScript DOM</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer p-3 bg-light">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODAL 4: CIS -->
-        <div class="modal fade" id="modalCIS" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content overflow-hidden">
-                    <div class="modal-header modal-header-gradient p-4">
-                        <h5 class="modal-title fw-bold text-white"><i class="bi bi-activity me-2 text-info"></i> CIS Klinik Pratama Del</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4 lh-lg">
-                        <p class="text-secondary">Prototipe antarmuka sistem informasi layanan klinik pratama mencakup alur registrasi mahasiswa, penjadwalan dokter piket, dan rekap medis mingguan.</p>
-                    </div>
-                    <div class="modal-footer bg-light p-3">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODAL 5: Imuniku -->
-        <div class="modal fade" id="modalImuniku" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content overflow-hidden">
-                    <div class="modal-header modal-header-gradient p-4">
-                        <h5 class="modal-title fw-bold text-white"><i class="bi bi-heart-pulse me-2 text-success"></i> Imuniku - Portal Imunisasi</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4 lh-lg">
-                        <p class="text-secondary">Website interaktif informasi dan pengingat jadwal imunisasi dasar anak balita terintegrasi dengan kalkulator usia dan grafik tumbuh kembang.</p>
-                    </div>
-                    <div class="modal-footer bg-light p-3">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODAL 6: Globora -->
-        <div class="modal fade" id="modalGlobora" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content overflow-hidden">
-                    <div class="modal-header modal-header-gradient p-4">
-                        <h5 class="modal-title fw-bold text-white"><i class="bi bi-compass me-2 text-warning"></i> Globora Tourism Portal</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4 lh-lg">
-                        <p class="text-secondary">Platform promosi destinasi wisata lokal Sumatera Utara untuk mendukung kewirausahaan digital dan pengalaman reservasi paket tur.</p>
-                    </div>
-                    <div class="modal-footer bg-light p-3">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ASIDE: PERTANYAAN UMUM (FAQ) ACCORDION -->
-        <aside id="faq" class="py-5">
+        <!-- SECTION 6: PERTANYAAN UMUM (FAQ) ACCORDION -->
+        <aside id="faq" class="py-5 bg-body-tertiary">
             <div class="container py-lg-4">
                 <div class="text-center max-w-2xl mx-auto mb-5">
                     <span class="section-pill mb-2"><i class="bi bi-patch-question"></i> FAQ</span>
@@ -758,12 +388,12 @@
                             <div class="accordion-item custom-accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button fw-bold py-3 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <i class="bi bi-question-circle-fill text-primary me-2 fs-5"></i> Topik proyek apa yang biasa Anda kerjakan?
+                                        <i class="bi bi-question-circle-fill text-primary me-2 fs-5"></i> Bagaimana data proyek dimuat pada web ini?
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary lh-lg">
-                                        Saya berfokus pada pengembangan situs web responsif berbasis HTML5/CSS3/Bootstrap 5, perancangan antarmuka pengguna (UI/UX) di Figma, analisis dokumen SRS, serta pemodelan basis data relasional SQL Server.
+                                        Seluruh data proyek dan layanan tidak lagi ditulis manual di HTML, melainkan dipisahkan ke dalam berkas JSON modular (<code>data/projects.json</code>) dan dimuat secara asinkron menggunakan Fetch API (Dynamic CSR).
                                     </div>
                                 </div>
                             </div>
@@ -784,12 +414,12 @@
                             <div class="accordion-item custom-accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed fw-bold py-3 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <i class="bi bi-send-check-fill text-info me-2 fs-5"></i> Bagaimana cara mengajukan diskusi atau konsultasi?
+                                        <i class="bi bi-send-check-fill text-info me-2 fs-5"></i> Bagaimana cara pengiriman formulir layanan?
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary lh-lg">
-                                        Anda dapat mengisi <strong>Formulir Layanan Kontak</strong> pada bagian di bawah ini dengan memilih topik layanan, metode sesi, serta pesan kebutuhan Anda.
+                                        Formulir dikirim secara asinkron via AJAX Fetch POST tanpa memicu *full page reload*. Pesanan Anda akan dikirim ke API simulasi dan disimpan secara persisten di <code>localStorage</code> peramban Anda.
                                     </div>
                                 </div>
                             </div>
@@ -799,13 +429,13 @@
             </div>
         </aside>
 
-        <!-- SECTION 5: FORMULIR LAYANAN & KONTAK MODERN (BOOTSTRAP FLOATING LABELS & VALIDATION) -->
-        <section id="layanan" class="py-5 bg-body-tertiary">
+        <!-- SECTION 7: FORMULIR LAYANAN KONTAK ASINKRON (DECOUPLED REST FORM DISPATCH) -->
+        <section id="layanan" class="py-5">
             <div class="container py-lg-4">
                 <div class="text-center max-w-2xl mx-auto mb-5">
-                    <span class="section-pill mb-2"><i class="bi bi-envelope"></i> Hubungi Saya</span>
+                    <span class="section-pill mb-2"><i class="bi bi-envelope"></i> Asynchronous REST Form</span>
                     <h2 class="fw-extrabold fs-1 mb-3">Formulir Layanan Kontak</h2>
-                    <p class="text-muted fs-5">Ajukan konsultasi atau diskusi proyek dengan mengisi formulir interaktif di bawah ini.</p>
+                    <p class="text-muted fs-5">Formulir dikirim secara asinkron via Fetch POST (tanpa reload), memicu notifikasi Toast, dan menyimpan pesanan ke LocalStorage.</p>
                 </div>
 
                 <div class="row">
@@ -825,7 +455,7 @@
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-person-fill"></i></span>
                                                 <div class="form-floating flex-grow-1">
-                                                    <input type="text" class="form-control border-start-0" id="floatingNama" placeholder="Nama Lengkap" required>
+                                                    <input type="text" class="form-control border-start-0" id="floatingNama" name="floatingNama" placeholder="Nama Lengkap" required>
                                                     <label for="floatingNama">Nama Lengkap *</label>
                                                 </div>
                                                 <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
@@ -838,7 +468,7 @@
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-envelope-fill"></i></span>
                                                 <div class="form-floating flex-grow-1">
-                                                    <input type="email" class="form-control border-start-0" id="floatingEmail" placeholder="nama@del.ac.id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                                    <input type="email" class="form-control border-start-0" id="floatingEmail" name="floatingEmail" placeholder="nama@del.ac.id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                                                     <label for="floatingEmail">Alamat Email Resmi *</label>
                                                 </div>
                                                 <div class="invalid-feedback">Alamat email valid wajib disertakan.</div>
@@ -851,7 +481,7 @@
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-telephone-fill"></i></span>
                                                 <div class="form-floating flex-grow-1">
-                                                    <input type="tel" class="form-control border-start-0" id="floatingTel" placeholder="087860463635" required pattern="[0-9]{10,14}">
+                                                    <input type="tel" class="form-control border-start-0" id="floatingTel" name="floatingTel" placeholder="087860463635" required pattern="[0-9]{10,14}">
                                                     <label for="floatingTel">Nomor Telepon / WA *</label>
                                                 </div>
                                                 <div class="invalid-feedback">Nomor WA valid (10-14 digit angka) wajib disertakan.</div>
@@ -864,7 +494,7 @@
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-calendar-event"></i></span>
                                                 <div class="form-floating flex-grow-1">
-                                                    <input type="number" class="form-control border-start-0" id="floatingSesi" placeholder="1" min="1" max="10" value="1" required>
+                                                    <input type="number" class="form-control border-start-0" id="floatingSesi" name="floatingSesi" placeholder="1" min="1" max="10" value="1" required>
                                                     <label for="floatingSesi">Jumlah Sesi Pertemuan (1 - 10) *</label>
                                                 </div>
                                                 <div class="invalid-feedback">Isi angka 1 hingga 10 sesi.</div>
@@ -886,7 +516,7 @@
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-layers-fill"></i></span>
                                                 <div class="form-floating flex-grow-1">
-                                                    <select class="form-select border-start-0" id="floatingSelectTopic" required aria-label="Pilih Topik Layanan">
+                                                    <select class="form-select border-start-0" id="floatingSelectTopic" name="floatingSelectTopic" required aria-label="Pilih Topik Layanan">
                                                         <option value="" selected disabled>-- Pilih Topik Layanan --</option>
                                                         <option value="web-dev">Pengembangan Web (HTML5, CSS3, Bootstrap 5)</option>
                                                         <option value="uiux-design">Desain Antarmuka & Prototyping (Figma)</option>
@@ -925,7 +555,7 @@
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text bg-light border-end-0 text-muted"><i class="bi bi-chat-left-text-fill"></i></span>
                                                 <div class="form-floating flex-grow-1">
-                                                    <textarea class="form-control border-start-0" id="floatingPesan" placeholder="Tuliskan deskripsi..." style="height: 120px;" required></textarea>
+                                                    <textarea class="form-control border-start-0" id="floatingPesan" name="floatingPesan" placeholder="Tuliskan deskripsi..." style="height: 120px;" required></textarea>
                                                     <label for="floatingPesan">Deskripsi Pertanyaan / Rincian Kebutuhan *</label>
                                                 </div>
                                                 <div class="invalid-feedback">Deskripsi pesan tidak boleh kosong.</div>
@@ -936,7 +566,7 @@
                                         <!-- CHECKBOX PERSETUJUAN -->
                                         <div class="col-12">
                                             <div class="form-check has-validation mt-2">
-                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                                <input class="form-check-input" type="checkbox" value="agreed" id="invalidCheck" name="invalidCheck" required>
                                                 <label class="form-check-label text-secondary small" for="invalidCheck">
                                                     Saya menyetujui bahwa data yang saya berikan adalah benar dan siap dihubungi untuk tindak lanjut konsultasi. *
                                                 </label>
@@ -969,7 +599,7 @@
                     </p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <small class="text-white-50 me-3">Web Programming & Testing (12S3101)</small>
+                    <small class="text-white-50 me-3">Web Programming & Testing (12S3101) • Week 4 CSR Architecture</small>
                 </div>
             </div>
         </div>
@@ -980,27 +610,47 @@
         <i class="bi bi-arrow-up fs-5"></i>
     </a>
 
-    <!-- Bootstrap 5.3.3 JS Bundle CDN (Termasuk Popper JS) -->
+    <!-- UNIVERSAL DYNAMIC MODAL COMPONENT (REQUIREMENT 4: EXACTLY 1 MODAL TUNGGAL) -->
+    <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content overflow-hidden shadow-2xl border-0">
+                <div class="modal-header modal-header-gradient p-4">
+                    <div>
+                        <h5 class="modal-title fw-bold" id="projectModalTitle">Judul Proyek</h5>
+                        <small class="text-white-50">Rincian Proyek Terstruktur (Decoupled Dynamic CSR)</small>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body p-4 lh-lg" id="projectModalBody">
+                    <!-- Konten diinjeksi secara dinamis via app.js (openProjectModal) sesuai ID proyek -->
+                </div>
+                <div class="modal-footer p-3 bg-light">
+                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAST TOAST NOTIFICATION COMPONENT (FOR ASYNC FORM FEEDBACK) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        <div id="toastNotification" class="toast border-0 shadow-lg rounded-4 overflow-hidden" role="alert" aria-live="assertive" aria-atomic="true">
+            <div id="toastHeader" class="toast-header bg-primary text-white p-3">
+                <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                <strong class="me-auto fs-6" id="toastTitle">Notifikasi API</strong>
+                <small class="text-white-50">Baru saja</small>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Tutup"></button>
+            </div>
+            <div class="toast-body p-3 bg-white text-secondary" id="toastMessage">
+                Permintaan konsultasi Anda berhasil diproses oleh API.
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- Script Validasi Form Bootstrap Standard -->
-    <script>
-        (() => {
-            'use strict'
-            const forms = document.querySelectorAll('.needs-validation')
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    } else {
-                        event.preventDefault()
-                        alert('Permintaan konsultasi Anda berhasil terkirim! Terima kasih.')
-                    }
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-    </script>
+    <!-- Application Architecture Modules (Multi-Tier JavaScript) -->
+    <script src="js/api-service.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
